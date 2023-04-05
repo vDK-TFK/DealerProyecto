@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "articulo")
+@Table(name = "vehiculo")
 public class Vehiculo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,9 +29,8 @@ public class Vehiculo implements Serializable {
     public Vehiculo() {
     } 
 
-    public Vehiculo(Long idVehiculo, String descripcion, String detalle, 
-            double precio, boolean activo) {
-        this.idVehiculo = idVehiculo;
+    public Vehiculo(Long idMarca, String descripcion, String detalle, double precio, boolean activo) {
+        this.idMarca = idMarca;
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;

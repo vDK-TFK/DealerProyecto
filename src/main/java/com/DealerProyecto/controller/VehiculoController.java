@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
 public class VehiculoController {
 
     @Autowired
@@ -28,8 +29,8 @@ public class VehiculoController {
 
     @GetMapping("/vehiculo/nuevo")
     public String nuevoVehiculo(Vehiculo vehiculo, Model model) {
-        var categorias = marcaService.getMarcas(true);
-        model.addAttribute("marcas", categorias);
+        var marcas = marcaService.getMarcas(true);
+        model.addAttribute("marcas", marcas);
         return "/vehiculo/modificar";
     }
 
@@ -42,8 +43,8 @@ public class VehiculoController {
     @GetMapping("/vehiculo/modificar/{idVehiculo}")
     public String modificarVehiculo(Vehiculo vehiculo, Model model) {
         vehiculo = vehiculoService.getVehiculo(vehiculo);
-        var categorias = marcaService.getMarcas(true);
-        model.addAttribute("marcas", categorias);
+        var marcas = marcaService.getMarcas(true);
+        model.addAttribute("marcas", marcas);
         model.addAttribute("vehiculo", vehiculo);
         return "/vehiculo/modificar";
     }

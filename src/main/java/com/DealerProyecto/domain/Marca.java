@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "marcas")
+@Table(name = "marca")
 public class Marca implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,14 +20,14 @@ public class Marca implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_marca")
     private Long idMarca;
-    private String descripcion;
+    private String nombrem;
     private boolean activo;
 
     public Marca() {
-    } 
+    }
 
-    public Marca(String descripcion, boolean activo) {
-        this.descripcion = descripcion;
+    public Marca(String nombrem, boolean activo) {
+        this.nombrem = nombrem;
         this.activo = activo;
-    }  
+    }
 }

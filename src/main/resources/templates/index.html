@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Dealer</title>
     </head>
     <body>
-        <div></div>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="container ">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://media.discordapp.net/attachments/1077614220113354894/1092958594686783538/images.jpg" class="d-block w-100" alt="img1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.discordapp.com/attachments/1077614220113354894/1092958603855548466/JDP_2023_Dodge_Hornet_GT_Blue_Steele_Front_Quarter_View_Action.webp" class="d-block w-100" alt="img2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.discordapp.net/attachments/1077614220113354894/1092958611371720714/trasera-Limited-x_Mesa-de-trabajo-1-1024x462.jpg" class="d-block w-100" alt="img3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.discordapp.net/attachments/1077614220113354894/1092958619705819277/ram-1500-trx-ignition-edition-1632490602.jpg?width=1202&height=676" class="d-block w-100" alt="img4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.discordapp.net/attachments/1077614220113354894/1092958627712749689/CLAcoupeSmallPlate.jpg?width=1014&height=676" class="d-block w-100" alt="img5">
+                    </div>                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>
