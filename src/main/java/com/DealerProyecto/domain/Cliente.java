@@ -19,7 +19,7 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private Long idCliente; //Hibernate lo transforma en id_cliente = idCliente
+    private Long idCliente; 
     private String nombre;
     private String apellidos;
     private String correo;
