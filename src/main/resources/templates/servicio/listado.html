@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Dealer</title>
+    </head>
+    <body>
+        <div class="contenido">
+            <h2 >Servicios</h2>
+            <a th:href="@{/servicio/nuevo}">Nuevo Servicio</a>
+            <br/>
+            <br/>
+            <div th:if="${servicios != null and !servicios.empty}">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                [[${servicio.titulo}]]
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                [[${servicio.descripcion}]]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div th:if="${servicios == null or servicios.empty}">
+                La lista de servicios esta vacia...
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
+</html>
