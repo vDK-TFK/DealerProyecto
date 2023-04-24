@@ -1,6 +1,5 @@
 package com.DealerProyecto.controller;
 
-import com.DealerProyecto.dao.ClienteDao;
 import com.DealerProyecto.domain.Cliente;
 import com.DealerProyecto.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
