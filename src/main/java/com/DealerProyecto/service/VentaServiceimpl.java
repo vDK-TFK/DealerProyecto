@@ -4,45 +4,47 @@
  */
 package com.DealerProyecto.service;
 
-import com.DealerProyecto.dao.ServicioDao;
-import com.DealerProyecto.domain.Servicio;
+import com.DealerProyecto.dao.VentaDao;
+import com.DealerProyecto.domain.Venta;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class ServicioServiceImpl implements ServicioService {
-
+public class VentaServiceimpl implements VentaService {
+    
     @Autowired
-    ServicioDao servicioDao;
-
+    VentaDao ventaDao;
+    
     @Override
     @Transactional(readOnly = true)
-    public List<Servicio> getServicios(boolean activo) {
-        var lista = (List<Servicio>) servicioDao.findAll();
+    public List<Venta> getVentas(boolean activo) {
+        var lista = (List<Venta>) ventaDao.findAll(); //4 = 3A y 1I
 
         if (activo) {
-            lista.removeIf(e -> !e.isActivo());
+            lista.removeIf(e -> !e.isActivo()); //4 = 3A
         }
+
         return lista;
     }
 
     @Override
-    public Servicio getServicio(Servicio servicio) {
-        return servicioDao.findById(servicio.getIdServicio()).orElse(null);
+    @Transactional(readOnly = true)
+    public Venta getVenta(Venta venta) {
+        return ventaDao.findById(venta.getIdVenta()).orElse(null);
     }
 
     @Override
     @Transactional
-    public void save(Servicio servicio) {
-        servicioDao.save(servicio);
+    public void save(Venta venta) {
+        ventaDao.save(venta);
     }
 
     @Override
     @Transactional
-    public void delete(Servicio servicio) {
-        servicioDao.delete(servicio);
+    public void delete(Venta venta) {
+        ventaDao.deleteById(venta.getIdVenta());
     }
 
 }

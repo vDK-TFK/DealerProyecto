@@ -16,7 +16,7 @@ public class MarcaServiceimpl implements MarcaService {
     @Override
     @Transactional(readOnly = true)
     public List<Marca> getMarcas(boolean activos) {
-                var lista = (List<Marca>) marcaDao.findAll(); //4 = 3A y 1I
+        var lista = (List<Marca>) marcaDao.findAll(); //4 = 3A y 1I
 
         if (activos) {
             lista.removeIf(e -> !e.isActivo()); //4 = 3A
@@ -26,7 +26,6 @@ public class MarcaServiceimpl implements MarcaService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Marca getMarca(Marca marca) {
         return marcaDao.findById(marca.getIdMarca()).orElse(null);
     }
@@ -42,4 +41,5 @@ public class MarcaServiceimpl implements MarcaService {
     public void delete(Marca categoria) {
         marcaDao.deleteById(categoria.getIdMarca());
     }
+
 }

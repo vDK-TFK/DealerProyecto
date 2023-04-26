@@ -23,7 +23,6 @@ public class ClienteServiceimpl implements ClienteService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
     }
@@ -39,4 +38,5 @@ public class ClienteServiceimpl implements ClienteService {
     public void delete(Cliente cliente) {
         clienteDao.deleteById(cliente.getIdCliente());
     }
+
 }
