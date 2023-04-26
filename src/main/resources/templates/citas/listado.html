@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Dealer</title>
+    </head>
+    
+    
+    <body>
+        <header th:replace="layout/plantilla :: header" />
+        <div class="container mt-4">
+            <div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1>Listado de Citas</h1>
+      <p>Total de Citas: [[${totalCitas}]]</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Cliente</th>
+            <th>Vehículo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="cita : ${Citas}">
+            <td th:text="${cita.idCitas}"></td>
+            <td th:text="${cita.fecha}"></td>
+            <td th:text="${cita.hora}"></td>
+            <td th:text="${cita.cliente}"></td>
+            <td th:text="${cita.vehiculo}"></td>
+            <td>
+              <a th:href="@{/citas/modificar/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-sm btn-primary">Modificar</a>
+              <a th:href="@{/citas/eliminar/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/citas/nuevo" class="btn btn-success">Agregar Cita</a>
+    </div>
+  </div>
+</div>
+        <footer th:replace="layout/plantilla :: footer" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    
+</html>

@@ -5,32 +5,54 @@
     <head th:replace="layout/plantilla :: head">
         <title>Dealer</title>
     </head>
+    
     <body>
-        <div class="contenido">
-            <h2 >Servicios</h2>
-            <a th:href="@{/servicio/nuevo}">Nuevo Servicio</a>
-            <br/>
-            <br/>
-            <div th:if="${servicios != null and !servicios.empty}">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                [[${servicio.titulo}]]
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                [[${servicio.descripcion}]]
-                            </div>
-                        </div>
+        <header th:replace="layout/plantilla :: header" />
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Servicio y mantenimiento de vehículos
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Servicio y mantenimiento de vehículos.</strong> 
+                        <ol>
+                            <li>Programación de una cita: El propietario del vehículo programa una cita para llevar su vehículo a la agencia en la que adquirió el auto.</li>
+                            <li>Inspección inicial: Una vez en la agencia, el vehículo es inspeccionado para determinar qué tipo de mantenimiento o reparaciones necesita.</li>
+                            <li>Presupuesto: Con base en los resultados de la inspección, se elabora un presupuesto para el servicio o reparación.</li>
+                            <li>Aprobación del presupuesto: Si el propietario del vehículo está de acuerdo con el presupuesto, se procede a realizar el servicio o reparación.</li>
+                            <li>Servicio y mantenimiento: Durante el servicio y mantenimiento, los técnicos de la agencia realizan una serie de actividades, que pueden incluir el cambio de aceite, la revisión de los frenos, el ajuste de la suspensión, entre otros.</li>
+                            <li>Pruebas de calidad: Una vez finalizado el servicio y mantenimiento, el vehículo es sometido a pruebas de calidad para garantizar que todo funcione correctamente.</li>
+                            <li>Entrega del vehículo: Finalmente, el propietario del vehículo es informado de que el servicio o mantenimiento ha sido completado y se le entrega el vehículo.</li>
+                        </ol>
                     </div>
                 </div>
             </div>
-            <div th:if="${servicios == null or servicios.empty}">
-                La lista de servicios esta vacia...
-            </div>
         </div>
+  <<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Reparación y reemplazo de piezas de automóviles
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p><strong>Reparación y reemplazo de piezas de automóviles:</strong></p>
+            <p>Una vez identificadas las piezas a reparar o reemplazar, nuestros técnicos informarán al propietario del vehículo y proporcionarán un presupuesto detallado del costo de las piezas y la mano de obra. Si el propietario está de acuerdo con el presupuesto, procedemos con la reparación o reemplazo de las piezas.</p>
+            <p>En nuestra agencia de autos, utilizamos piezas de alta calidad originales del fabricante o de terceros confiables. En caso de que no estén disponibles en el momento, nos encargamos de hacer el pedido y esperar su llegada lo antes posible para completar el trabajo de manera eficiente y rápida.</p>
+            <p>Una vez que se completa el trabajo, nuestro técnico realiza pruebas para asegurarse de que todo esté funcionando correctamente. Además, ofrecemos garantías en el trabajo realizado y las piezas utilizadas para garantizar la satisfacción del cliente.</p>
+            <p>Recuerda que es importante seguir el mantenimiento programado para prolongar la vida útil de las piezas y del vehículo en general. ¡Confía en nosotros para mantener tu auto en las mejores condiciones posibles!</p>
+        </div>
+    </div>
+</div>
+     
+            
         <footer th:replace="layout/plantilla :: footer" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </body>
+    
 </html>
