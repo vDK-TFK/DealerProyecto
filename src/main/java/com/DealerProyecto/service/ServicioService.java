@@ -1,15 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package com.DealerProyecto.service;
 
-import com.DealerProyecto.domain.Servicios;
 import java.util.List;
+import com.DealerProyecto.domain.Servicio;
 
-public interface ServicioService {
+public interface ServicioService 
+{
+    public List<Servicio> getServicios(boolean activo);
     
-    public List<Servicios> getServicios(boolean servicio); //obtener todos los categorias
+    public Servicio getServicio(Servicio servicio);
     
-    public Servicios getServicio(Servicios servicio); //un categoria en especifico
+    public void save(Servicio servicio);
     
-    public void save(Servicios servicio); //insertar nuevo registro o modificar (si viene el id categoria o no)
+    public void delete(Servicio servicio);
     
-    public void delete(Servicios servicio); //eliminar   
 }

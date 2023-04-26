@@ -1,3 +1,4 @@
+
 package com.DealerProyecto.domain;
 
 import jakarta.persistence.Column;
@@ -6,28 +7,33 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.io.Serializable;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "marca")
-public class Marca implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Table(name = "servicios")
+public class Servicio 
+{
+   private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_marca")
-    private Long idMarca;
-    private String nombrem;
+    @Column(name = "id_servicio")
+    private Long idServicio;
+    private String Titulo;
+    private String descripcion;
     private boolean activo;
 
-    public Marca() {
+    public Servicio() {
     }
 
-    public Marca(String nombrem, boolean activo) {
-        this.nombrem = nombrem;
+    public Servicio(String Titulo, String descripcion, boolean activo) {
+        this.Titulo = Titulo;
+        this.descripcion = descripcion;
         this.activo = activo;
     }
+    
+    
+    
+    
 }

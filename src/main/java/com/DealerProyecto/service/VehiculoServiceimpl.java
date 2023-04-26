@@ -16,7 +16,7 @@ public class VehiculoServiceimpl implements VehiculoService {
     @Override
     @Transactional(readOnly = true)
     public List<Vehiculo> getVehiculos(boolean activos) {
-               var lista = (List<Vehiculo>) vehiculoDao.findAll(); //4 = 3A y 1I
+        var lista = (List<Vehiculo>) vehiculoDao.findAll(); //4 = 3A y 1I
 
         if (activos) {
             lista.removeIf(e -> !e.isActivo()); //4 = 3A
@@ -24,9 +24,8 @@ public class VehiculoServiceimpl implements VehiculoService {
 
         return lista;
     }
-
-    @Override
-    @Transactional(readOnly = true)
+    
+     @Override
     public Vehiculo getVehiculo(Vehiculo vehiculo) {
         return vehiculoDao.findById(vehiculo.getIdVehiculo()).orElse(null);
     }
@@ -42,4 +41,7 @@ public class VehiculoServiceimpl implements VehiculoService {
     public void delete(Vehiculo vehiculo) {
         vehiculoDao.deleteById(vehiculo.getIdVehiculo());
     }
+
+   
+
 }
