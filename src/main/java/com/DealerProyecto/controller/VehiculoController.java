@@ -19,12 +19,12 @@ public class VehiculoController {
     @Autowired
     MarcaService marcaService;
 
-    @GetMapping("/vehiculo/listado")
+    @GetMapping("/vehiculo/mostrar")
     public String inicio(Model model) {
         var vehiculos = vehiculoService.getVehiculos(false);
         model.addAttribute("vehiculos", vehiculos);
 
-        return "/vehiculo/listado";
+        return "/vehiculo/mostrar";
     }
 
     @GetMapping("/vehiculo/nuevo")
@@ -53,5 +53,13 @@ public class VehiculoController {
     public String eliminarVehiculo(Vehiculo vehiculo) {
         vehiculoService.delete(vehiculo);
         return "redirect:/vehiculo/listado";
+    }
+
+    @GetMapping("/vehiculo/listado")
+    public String listadoVehiculo(Model model) {
+        var vehiculos = vehiculoService.getVehiculos(false);
+        model.addAttribute("vehiculos", vehiculos);
+
+        return "/vehiculo/listado";
     }
 }
