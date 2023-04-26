@@ -25,6 +25,8 @@ public class Vehiculo implements Serializable {
     private String detalle;
     private double precio;
     private boolean activo;
+    @Column(name="ruta_imagen")
+    private String rutaImagen;
     
     public Vehiculo() {
     } 

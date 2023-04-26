@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class CitasController 
-{
+public class CitasController {
+
     @Autowired
     CitasService citasService;
-    
+
     @GetMapping("/citas/listado")
     public String inicio(Model model) {
-        var Citas=citasService.getCitas();
-        
-        model.addAttribute("totalCitas",Citas.size());
-        
-        model.addAttribute("Citas",Citas);
-        return "/citas/listado"; 
+        var Citas = citasService.getCitas();
+
+        model.addAttribute("totalCitas", Citas.size());
+
+        model.addAttribute("Citas", Citas);
+        return "/citas/listado";
     }
-    
+
     @GetMapping("/citas/nuevo")
     public String nuevoCitas(Citas citas) {
         return "/citas/modificar";
@@ -51,7 +51,10 @@ public class CitasController
         citasService.delete(citas);
         return "redirect:/citas/listado";
     }
-    
-    
-    
+
+    @GetMapping("/citas/logcitas")
+    public String mostrarCitas(Citas citas) {
+        return "/citas/logcitas";
+    }
+
 }

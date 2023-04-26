@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       cmlns:sec="http://thymeleaf.org.thymeleaf-extras-springsegurity">
     <head th:fragment="head">
-        <title>Tech Shop</title>
+        <title>Dealer</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
         <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
@@ -14,34 +14,34 @@
         <header th:fragment="header" class="header">
             <nav class="navbar navbar-expand-sm bg-body-tertiary bg-dark p-1">
                 <div class="container">
-                    <a th:href="@{/}" class="navbar-brand" href="#">Dealer</a>
+                    <a th:href="@{/}" class="navbar-brand" href="#">[[#{aplicacion.titulo}]]</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/vehiculo/mostrar}">Vehiculos</a>
+                                <a class="nav-menu-link nav-link" th:href="@{/vehiculo/mostrar}">[[#{plantilla.vehiculos}]]</a>
                             </li>
-                            
+
                             <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/servicio/listado}">Servicio Automotriz</a>
+                                <a class="nav-menu-link nav-link" th:href="@{/servicio/listado}">[[#{plantilla.servicio}]]</a>
                             </li>
-                            <li class="nav-item">
+<!--                            <li class="nav-item">
                                 <a class="nav-menu-link nav-link" th:href="@{/citas/listado}">Citas</a>
+                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-menu-link nav-link" th:href="@{/contactos/listado}">[[#{plantilla.contacto}]]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/contacto/listado}">Contactenos</a>
+                                <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">[[#{plantilla.cliente}]]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">Clientes</a>
+                                <a class="nav-menu-link nav-link" th:href="@{/vehiculo/listado}">[[#{plantilla.vehinv}]]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/vehiculo/listado}">Vehiculos Inv</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-menu-link nav-link" th:href="@{/citas/logcitas}">log citas</a>
-                            </li>                        
+                                <a class="nav-menu-link nav-link" th:href="@{/citas/logcitas}">[[#{plantilla.logcitas}]]</a>
+                            </li>  
                         </ul>
                     </div>
                 </div>

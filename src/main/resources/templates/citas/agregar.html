@@ -5,8 +5,8 @@
     <head th:replace="layout/plantilla :: head">
         <title>Dealer</title>
     </head>
-
-
+    
+    
     <body>
         <header th:replace="layout/plantilla :: header" />
         <div class="container mt-4">
@@ -41,13 +41,35 @@
                             </tbody>
                         </table>
                         <a href="/citas/nuevo" class="btn btn-success">Agregar Cita</a>
+                        <hr>
+                        <h2>Agregar Cita</h2>
+                        <form action="/citas/agregar" method="post">
+                            <div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha">
+                            </div>
+                            <div class="form-group">
+                                <label for="hora">Hora</label>
+                                <input type="time" class="form-control" id="hora" name="hora">
+                            </div>
+                            <div class="form-group">
+                                <label for="cliente">Cliente</label>
+                                <input type="text" class="form-control" id="cliente" name="cliente">
+                            </div>
+                            <div class="form-group">
+                                <label for="vehiculo">Vehículo</label>
+                                <input type="text" class="form-control" id="vehiculo" name="vehiculo">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <footer th:replace="layout/plantilla :: footer" />
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        </div>
+        <footer th:replace="layout/plantilla :: footer" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </body>
-
+    
 </html>

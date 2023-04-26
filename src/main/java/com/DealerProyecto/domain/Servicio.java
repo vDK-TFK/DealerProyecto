@@ -20,15 +20,15 @@ public class Servicio
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_servicio")
     private Long idServicio;
-    private String Titulo;
+    private String titulo;
     private String descripcion;
     private boolean activo;
 
     public Servicio() {
     }
 
-    public Servicio(String Titulo, String descripcion, boolean activo) {
-        this.Titulo = Titulo;
+    public Servicio(String titulo, String descripcion, boolean activo) {
+        this.titulo = titulo;
         this.descripcion = descripcion;
         this.activo = activo;
     }
