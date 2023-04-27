@@ -20,6 +20,7 @@
                             <tr>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col">Imagen</th>
                                 <th scope="col">Activo</th>
                                 <th scope="col" colspan="2">Acciones</th>
                             </tr>
@@ -28,6 +29,7 @@
                             <tr th:each="item : ${vehiculos}">
                                 <td th:text="${item.descripcion}"></td>
                                 <td th:text="${#numbers.formatDecimal(item.precio, 3, 2)}"></td>
+                                <td th:text="${item.rutaImagen}"></td>
                                 <td>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="activo" th:checked="${item.activo}" disabled>
